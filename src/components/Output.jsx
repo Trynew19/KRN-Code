@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Button, Text, useToast } from "@chakra-ui/react";
 import { executeCode } from "../api";
+import autoprefixer from "autoprefixer";
 
 const Output = ({ editorRef, language }) => {
   const toast = useToast();
@@ -30,7 +31,7 @@ const Output = ({ editorRef, language }) => {
   };
 
   return (
-    <Box w="50%">
+    <Box w="100%">
       <Text mb={2} fontSize="lg">
         Output
       </Text>
@@ -46,10 +47,11 @@ const Output = ({ editorRef, language }) => {
       <Box
         height="75vh"
         p={2}
-        color={isError ? "red.400" : ""}
+        color={isError ? "red.400" : "white"}
         border="1px solid"
         borderRadius={4}
         borderColor={isError ? "red.500" : "#333"}
+        overflow="auto"
       >
         {output
           ? output.map((line, i) => <Text key={i}>{line}</Text>)

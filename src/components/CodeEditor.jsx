@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, Flex, VStack, Stack } from "@chakra-ui/react";
 import { Editor } from "@monaco-editor/react";
 import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "../constants";
@@ -21,9 +21,9 @@ const CodeEditor = () => {
   };
 
   return (
-    <Box>
-      <HStack spacing={4}>
-        <Box w="50%">
+    <Box w="100%" p={4}>
+      <Stack direction={{ base: "column", md: "row" }} spacing={4}>
+        <Box w={{ base: "100%", md: "50%" }}>
           <LanguageSelector language={language} onSelect={onSelect} />
           <Editor
             options={{
@@ -40,10 +40,12 @@ const CodeEditor = () => {
             onChange={(value) => setValue(value)}
           />
         </Box>
-        <Output editorRef={editorRef} language={language} />
-      </HStack>
-      <h1 className="text-red-800">Krishna chauhan</h1>
+        <Box w={{ base: "100%", md: "50%" }}>
+          <Output editorRef={editorRef} language={language} />
+        </Box>
+      </Stack>
     </Box>
   );
 };
+
 export default CodeEditor;
