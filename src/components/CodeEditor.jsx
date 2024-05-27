@@ -21,7 +21,7 @@ const CodeEditor = () => {
   };
 
   return (
-    <Box w="100%" p={4}>
+    <Box w="100%" p={1}>
       <Stack direction={{ base: "column", md: "row" }} spacing={4}>
         <Box w={{ base: "100%", md: "50%" }}>
           <LanguageSelector language={language} onSelect={onSelect} />

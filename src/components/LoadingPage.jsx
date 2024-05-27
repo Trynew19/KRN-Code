@@ -9,7 +9,7 @@ const LoadingPage = () => {
     // Simulate a 5-second loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+    }, 1000);
 
     // Clear the timer when the component is unmounted to avoid memory leaks
     return () => clearTimeout(timer);
