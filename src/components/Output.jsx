@@ -36,14 +36,15 @@ const Output = ({ editorRef, language }) => {
         Output
       </Text>
       <Button
-        variant="outline"
-        colorScheme="green"
-        mb={4}
-        isLoading={isLoading}
-        onClick={runCode}
-      >
-        Run Code
-      </Button>
+            variant="outline"
+            colorScheme="white"
+            backgroundColor="green"
+            mb={4}
+            isLoading={isLoading}
+            onClick={runCode}
+          >
+            Run Code
+          </Button>
       <Box
         height="75vh"
         p={2}
